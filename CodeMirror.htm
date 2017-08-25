@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://codemirror.net/ -->
+<head><meta http-equiv="Content-Type" content="application/json; charset=UTF-8"><title>Operam</title>
+
+
+<link rel="stylesheet" href="./CodeMirror_files/codemirror.css"/>
+<link rel="stylesheet" href="./CodeMirror_files/foldgutter.css" />
+<link rel="stylesheet" href="./CodeMirror_files/dialog.css">
+<link rel="stylesheet" href="./CodeMirror_files/matchesonscrollbar.css">
+
+<script src="./CodeMirror_files/codemirror.js"></script>
+<script src="./CodeMirror_files/foldcode.js"></script>
+<script src="./CodeMirror_files/foldgutter.js"></script>
+<script src="./CodeMirror_files/brace-fold.js"></script>
+<script src="./CodeMirror_files/xml-fold.js"></script>
+<script src="./CodeMirror_files/indent-fold.js"></script>
+<script src="./CodeMirror_files/markdown-fold.js"></script>
+<script src="./CodeMirror_files/comment-fold.js"></script>
+<script src="./CodeMirror_files/xml.js"></script>
+<script src="./CodeMirror_files/javascript.js"></script>
+<script src="./CodeMirror_files/css.js"></script>
+<script src="./CodeMirror_files/htmlmixed.js"></script>
+<script src="./CodeMirror_files/matchbrackets.js"></script>
+<script src="./CodeMirror_files/activebookmark.js"></script>
+
+
+<script src="./CodeMirror_files/dialog.js"></script>
+<script src="./CodeMirror_files/searchcursor.js"></script>
+<script src="./CodeMirror_files/search.js"></script>
+<script src="./CodeMirror_files/annotatescrollbar.js"></script>
+<script src="./CodeMirror_files/matchesonscrollbar.js"></script>
+
+
+  
+<style>
+  .CodeMirror { height: 600px; border: 1px solid #ddd; }
+  .CodeMirror-scroll { max-height: 600px; }
+  .CodeMirror pre { padding-left: 7px; line-height: 1.25; }
+</style>
+
+</head>
+
+<body>
+<div id="nav">
+
+<article>
+
+
+<section id="demo">
+  
+  <form style="position: relative; margin-top: .5em;" lpformnum="1">
+  <textarea id="demotext" style="display: none;">
+   {{content}}
+  </textarea>
+ 
+ </form>
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("demotext"), {
+      lineNumbers: true,
+      mode: "javascript",
+      matchBrackets: true,
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+      extraKeys: {"Alt-F": "findPersistent"}
+    });
+
+    // var textArea = document.getElementById('demotext');
+    var obj = JSON.parse(editor.getDoc().getValue());
+    editor.getDoc().setValue(JSON.stringify(obj, null, 2));
+
+
+    //editor.foldCode(CodeMirror.Pos(13, 0));
+  </script>
+
+
+</section>
+
+
+
+</article>
+</div>
+</body></html>
